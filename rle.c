@@ -3,7 +3,6 @@ char Rle[1000];
 int main ( )
 {
 	int i=0;
-	//char ch , str [ 100 ] ;
 	FILE *fptr;
     char filename[25], c;
     printf("Enter the filename to open \n");
