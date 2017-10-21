@@ -8,16 +8,16 @@ int main ( )
     char filename[25], c;
     printf("Enter the filename to open \n");
     scanf("%s", filename);
-    fptr = fopen(filename, "r");
+    fptr = fopen(filename, "r");  // An External File is Opened
     c = fgetc(fptr);
-    while (c != EOF)
+    while (c != EOF)  // Reading the Extenal File
     {
     	Rle[i]=c;
         c = fgetc(fptr);
         i++;
     }
-    fclose(fptr);
-	printf("\n\n1 =>: Run - Length Encoding.\n\n2 =>: Run - Length Decoding.\n\n3 =>: Exit the Program.\n\nEnter your Choice =>:");
+    fclose(fptr); // Extenal File Closed
+	printf("\n\n1 =>: Run - Length Encoding.\n\n2 =>: Run - Length Decoding.\n\n3 =>: Exit the Program.\n\nEnter your Choice =>:");  // Choose what should happen with the file
 	scanf("%d",&i);
 	switch(i)
 	{
@@ -31,7 +31,7 @@ int RLEcompression()
 {
 	FILE *outfile;
 	int count=0,setcount=1,len;
-	outfile=fopen("out.txt","w");
+	outfile=fopen("out.txt","w"); // Creating and writing the compressed results in the output file
 	len=strlen(Rle);
 	while(count<len)
 	{
@@ -53,7 +53,7 @@ int RLEdecompression()
 {
 FILE *outfile;
 int count,i,len,j;
-outfile=fopen("out1.txt","w");
+outfile=fopen("out1.txt","w"); // Creating and writing decompressed results in the output file
 len=strlen(Rle);
 for(i=1;i<len;i=i+3)
 {
