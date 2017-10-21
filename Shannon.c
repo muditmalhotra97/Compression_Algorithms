@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h> //header files
 #include<conio.h>
 #include<string.h>
 struct node
@@ -12,7 +12,7 @@ int tn=0;
 typedef struct node node;
 void shannon(int l,int h,node s[])
 {
-	float pack1=0,pack2=0,diff1=0,diff2=0;
+	float pack1=0,pack2=0,diff1=0,diff2=0; // Variable declaration
 	int i,d,k,j;
 	if((l+1)==h || l==h || l>h)
 	{
@@ -59,7 +59,7 @@ void shannon(int l,int h,node s[])
 int main()
 {
 	FILE *infile;
-    int i,j,c = 0;
+    int i,j,c = 0; // Variable Declaration
     int freq[95]={0};
 	float x,total=0,p,uni=0;
 	char ch;
@@ -77,7 +77,7 @@ int main()
     exit(0);
     printf("Enter the filename to open \n");
     scanf("%s", filename1);
-    infile = fopen(filename1, "r");
+    infile = fopen(filename1, "r"); // opening or creating of the file
     printf("Enter the filename for output \n");
     scanf("%s", filename2);
     if (infile == NULL)
@@ -107,7 +107,7 @@ int main()
 		  		tn++;
 			  }	  
    }
-   fclose(infile);
+   fclose(infile); // Created file is closed
 	
 	for(j=1;j<=tn;j++)
 	{
@@ -136,7 +136,7 @@ int main()
 			printf("%d",s[i].arr[j]);
 	}
 	printf("\n---------------------------------------------------------------\n");
-	encode(filename1, filename2);
+	encode(filename1, filename2); // function call
 	goto LOOP;
 	getch();
 	return 0;
@@ -147,7 +147,7 @@ int encode(char filename1[25],char filename2[25])
 		char ch;
 		int i,j;
 		infile = fopen(filename1, "r");
-		outfile= fopen(filename2,"w");
+		outfile= fopen(filename2,"w"); // creaating and writing in the file
 		ch = fgetc(infile); 
     	while (ch != EOF)
     	{
@@ -168,22 +168,22 @@ int encode(char filename1[25],char filename2[25])
 			}
         	ch = fgetc(infile);
     	}
-    	fclose(infile);
+    	fclose(infile); // opened dfiles are closed
     	fclose(outfile);
     	
     	return 0;
 	}
-int decode(char filename2[25])
+int decode(char filename2[25]) //the decode function
 {
 	FILE *infile, *outfile;
 	char ch;
 	char filename1[25];
 	int ar[20];
 	int i,j,k,l,m=0;
-    infile = fopen(filename2, "r");
+    infile = fopen(filename2, "r"); //reading or creating the file
     printf("Enter the filename for output \n");
     scanf("%s", filename1);
-	outfile= fopen(filename1,"w");
+	outfile= fopen(filename1,"w"); //opening and writing in the file
 	ch = fgetc(infile); 
     while(m==0)
 		{
@@ -217,7 +217,7 @@ int decode(char filename2[25])
 			 	m=1; 
    	
     	}
- 	fclose(infile);
+ 	fclose(infile); // the files are closed
    	fclose(outfile);
     	
 
